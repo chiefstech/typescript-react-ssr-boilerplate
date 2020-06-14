@@ -32,7 +32,6 @@ $> npm run start
 
 Access the app at `localhost:5000`
 
-
 ### Typescript vscode settings
 
 Ensure you have prettier installed globally `npm i -g prettier`
@@ -61,3 +60,10 @@ Add the following to your vscode settings to help out with IDE support for types
   "prettier.singleQuote": true
 }
 ```
+
+## Module alias
+
+1. module-alias npm dependency and package.json \_moduleAliases defined
+1. define webpack resolve aliases
+1. define tsconfig path aliases
+1. define `jsconfig.json` for `vscode` intellisense and import resolution
