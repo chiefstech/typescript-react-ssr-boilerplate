@@ -5,6 +5,7 @@ const nodeExternals = require('webpack-node-externals');
 var config = {
   mode: 'development',
   plugins: [new webpack.HotModuleReplacementPlugin()],
+  // devtool: 'eval-cheap-module-source-map',
   module: {
     rules: [
       {

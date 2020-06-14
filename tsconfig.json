@@ -1,17 +1,25 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "es6",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "moduleResolution": "node",
-        "jsx": "react",
-        "baseUrl": "./src",
-        "lib": ["es5", "es6", "dom"],
-        "paths": {
-            "@client/*": ["src/client/*"],
-            "@server/*": ["src/server/*"],
-            "@common/*": ["src/common/*"]
-          }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "checkJs": false,
+    "allowJs": true,
+    "baseUrl": "./src",
+    "lib": ["es5", "es6", "dom"],
+    "paths": {
+      //   "@client/*": ["src/client/*"],
+      //   because baseUrl is src it can be removed from the alias
+      "@client/*": ["client/*"],
+      //   "@server/*": ["src/server/*"],
+      //   because baseUrl is src it can be removed from the alias
+      "@server/*": ["server/*"],
+      //   "@common/*": ["src/common/*"]
+      //   because baseUrl is src it can be removed from the alias
+      "@common/*": ["common/*"]
     }
+  }
 }

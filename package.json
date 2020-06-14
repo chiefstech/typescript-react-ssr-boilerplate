@@ -1,48 +1,68 @@
 {
-    "name": "typescript-react-ssr-boilerplate",
-    "version": "0.5.0",
-    "license": "MIT",
-    "author": "thomasrogerlux@outlook.fr",
-    "scripts": {
-        "build-dev": "webpack --watch",
-        "build": "webpack",
-        "start-dev": "nodemon build/server.js",
-        "start": "node build/server.js"
-    },
-    "_moduleAliases": {
-        "@cypress": "cypress",
-        "@client": "src/client",
-        "@server": "src/server",
-        "@common": "src/common"
-    },
-    "dependencies": {
-        "@material-ui/core": "^3.1.1",
-        "@reduxjs/toolkit": "^1.3.6",
-        "express": "^4.16.3",
-        "module-alias": "^2.1.0",
-        "react": "^16.4.1",
-        "react-dom": "^16.4.1",
-        "react-jss": "^8.6.1",
-        "react-redux": "^5.0.7",
-        "react-router-dom": "^4.3.1",
-        "redux": "^4.0.0",
-        "ua-parser-js": "^0.7.21"
-    },
-    "devDependencies": {
-        "@types/express": "^4.16.0",
-        "@types/module-alias": "^2.0.0",
-        "@types/node": "^10.11.3",
-        "@types/react": "^16.4.1",
-        "@types/react-dom": "^16.0.6",
-        "@types/react-jss": "^8.6.0",
-        "@types/react-redux": "^6.0.2",
-        "@types/react-router-dom": "^4.3.1",
-        "@types/ua-parser-js": "^0.7.33",
-        "nodemon": "^1.18.4",
-        "ts-loader": "^4.4.1",
-        "typescript": "^2.9.2",
-        "webpack": "^4.12.1",
-        "webpack-cli": "^3.0.8",
-        "webpack-node-externals": "^1.7.2"
-    }
+  "name": "typescript-react-ssr-boilerplate",
+  "version": "0.5.0",
+  "license": "MIT",
+  "author": "thomasrogerlux@outlook.fr",
+  "scripts": {
+    "build-dev": "webpack --watch",
+    "build": "webpack",
+    "start-dev": "nodemon build/server.js",
+    "start": "node build/server.js",
+    "precommit": "npx tsc --noEmit && lint-staged",
+    "test": "rm .babelrc & NODE_ENV=test yarn jest --config=config/jest/jest.config.js",
+    "test:watch": "rm .babelrc & NODE_ENV=test yarn jest --config=config/jest/jest.config.js --watch --json --outputFile=.jest-test-results.json || true",
+    "test:debug": "rm .babelrc & yarn -n=--inspect jest --runInBand --config=config/jest/jest.config.js --watch"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "lint:fix",
+      "git add"
+    ],
+    "*.{json,scss,sass,css,less}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "_moduleAliases": {
+    "@cypress": "cypress",
+    "@client": "src/client",
+    "@server": "src/server",
+    "@common": "src/common"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.1.1",
+    "@reduxjs/toolkit": "^1.3.6",
+    "express": "^4.16.3",
+    "module-alias": "^2.1.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-jss": "^8.6.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "ua-parser-js": "^0.7.21"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/module-alias": "^2.0.0",
+    "@types/node": "^10.11.3",
+    "@types/react": "^16.4.1",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-jss": "^8.6.0",
+    "@types/react-redux": "^6.0.2",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/theming": "^2.0.0",
+    "@types/ua-parser-js": "^0.7.33",
+    "husky": "^0.14.3",
+    "jest": "^26.0.1",
+    "jest-fetch-mock": "^2.1.2",
+    "jest-localstorage-mock": "^2.4.0",
+    "lint-staged": "^4.3.0",
+    "nodemon": "^1.18.4",
+    "ts-loader": "^4.4.1",
+    "typescript": "^2.9.2",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-node-externals": "^1.7.2"
+  }
 }

@@ -1,6 +1,6 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 // import { userAgentSlice, getUserAgentSlice } from '@common/store/slices/user-agent-slice';
-import { userAgentSlice, getUserAgentSlice } from './slices/user-agent-slice';
+import { userAgentSlice, getUserAgentSlice } from '@common/store/slices/user-agent-slice';
 
 const rootReducer = combineReducers({
   ua: userAgentSlice.reducer
