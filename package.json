@@ -53,6 +53,7 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/theming": "^2.0.0",
     "@types/ua-parser-js": "^0.7.33",
+    "cypress": "^3.2.0",
     "husky": "^0.14.3",
     "jest": "^26.0.1",
     "jest-fetch-mock": "^2.1.2",

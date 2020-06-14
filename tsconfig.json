@@ -21,5 +21,7 @@
       //   because baseUrl is src it can be removed from the alias
       "@common/*": ["common/*"]
     }
-  }
+  },
+  "include": ["src", "cypress"],
+  "exclude": ["**/node_modules", "**/.*/"]
 }
