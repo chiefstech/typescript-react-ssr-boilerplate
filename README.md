@@ -64,6 +64,11 @@ Add the following to your vscode settings to help out with IDE support for types
 ## Module alias
 
 1. module-alias npm dependency and package.json \_moduleAliases defined
+1. define `jsconfig.json` for vscode IDE intellisense and import resolution
 1. define webpack resolve aliases
 1. define tsconfig path aliases
-1. define `jsconfig.json` for `vscode` intellisense and import resolution
+1. define jest config aliases
+
+## TODO
+
+- [ ] add jest.js and tests
