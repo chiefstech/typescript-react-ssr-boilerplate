@@ -74,4 +74,5 @@ Add the following to your vscode settings to help out with IDE support for types
 - [ ] add jest.js and tests
 - [ ] add storybooks and stories
 - [ ] add lint staged
-- [ ] add tsc check to precommit
+- [x] add tsc check to precommit
+- [ ] add cypress and tests
