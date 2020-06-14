@@ -7,6 +7,11 @@
         "moduleResolution": "node",
         "jsx": "react",
         "baseUrl": "./src",
-        "lib": ["es5", "es6", "dom"]
+        "lib": ["es5", "es6", "dom"],
+        "paths": {
+            "@client/*": ["src/client/*"],
+            "@server/*": ["src/server/*"],
+            "@common/*": ["src/common/*"]
+          }
     }
 }

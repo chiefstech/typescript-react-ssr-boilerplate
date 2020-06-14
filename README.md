@@ -30,4 +30,34 @@ $> npm run start
 
 # Usage
 
-Access the app at `localhost:8080`
+Access the app at `localhost:5000`
+
+
+### Typescript vscode settings
+
+Ensure you have prettier installed globally `npm i -g prettier`
+
+Install the following vscode prettier extension https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+
+Add the following to your vscode settings to help out with IDE support for typescript
+
+```
+{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.configPath": ".prettierc.json",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true
+}
+```
