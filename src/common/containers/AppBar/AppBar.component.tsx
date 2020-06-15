@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { AppBar as BaseAppBar, Typography, Grid, Toolbar, withStyles } from '@material-ui/core';
 
 import NavLinkButton from 'common/components/NavLinkButton/NavLinkButton.component';
