@@ -68,6 +68,7 @@ Add the following to your vscode settings to help out with IDE support for types
 1. define webpack resolve aliases
 1. define tsconfig path aliases
 1. define jest config aliases
+1. define storybook webpack config aliases
 
 ## TODO
 
