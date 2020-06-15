@@ -1,4 +1,4 @@
-const [clientConfig] = require('../webpack.config');
+const path = require('path');
 module.exports = {
   stories: [
     '../stories/**/*.stories.js',
@@ -22,7 +22,9 @@ module.exports = {
     config.resolve.extensions.push('.ts', '.tsx');
     config.resolve.alias = {
       ...config.resolve.alias,
-      ...clientConfig.resolve.alias
+      '@client': path.resolve('../src/client'),
+      '@server': path.resolve('../src/server'),
+      '@common': path.resolve('../src/common')
     };
     return config;
   }
