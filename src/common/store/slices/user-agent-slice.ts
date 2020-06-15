@@ -24,7 +24,7 @@ const reducers = {
 };
 
 export const userAgentSlice = createSlice({
-  name: 'tst-shared/user-agent',
+  name: 'app-name/user-agent',
   initialState: ua as IUAParser.IResult,
   reducers
 });
@@ -34,7 +34,7 @@ export interface UserAgentSliceProps {
 }
 export const getUserAgentSlice = ({ ua }: UserAgentSliceProps) => {
   return createSlice({
-    name: 'tst-shared/user-agent',
+    name: 'app-name/user-agent',
     initialState: { ...ua } as IUAParser.IResult,
     reducers
   });
