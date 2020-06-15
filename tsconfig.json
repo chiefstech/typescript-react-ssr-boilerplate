@@ -1,15 +1,31 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "es6",
-    "noImplicitAny": true,
-    "removeComments": true,
+    // Target the latest version of ECMAScript.
+    "target": "es2016",
+    "lib": ["webworker", "es2018", "dom", "dom.iterable"],
+    "sourceMap": false,
+    // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
+    "module": "esnext",
     "jsx": "react",
     "checkJs": false,
     "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    // Disabled for dev efficiency
+    "noUnusedLocals": false,
+    "resolveJsonModule": true,
     "baseUrl": "./src",
-    "lib": ["es5", "es6", "dom"],
     "paths": {
       //   "@client/*": ["src/client/*"],
       //   because baseUrl is src it can be removed from the alias
