@@ -1,27 +1,30 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { NavigationState } from '@common/types/navigation.types';
 
-const initialState: NavigationState = {
+export const initialState: NavigationState = {
   currentRoute: 'Home',
   routes: ['Home', 'About', 'Sign In'],
   subRoutes: [[], ['Company', 'Careers'], []]
 };
 // used to override initialState, for example in a storybook
-const override = (
+const initialize = (
   state: NavigationState,
-  action: PayloadAction<{} | undefined>
+  action: PayloadAction<NavigationState | undefined>
 ): NavigationState => {
   // if payload is undefined when override is called we must revert the previous ua to have the original values; otherwise store caches previously overriden values
   return { ...state, ...(action.payload || initialState) };
 };
 
-const updateCurrentRoute = (state: NavigationState, action: PayloadAction<string>) => {
+const updateCurrentRoute = (
+  state: NavigationState,
+  action: PayloadAction<string>
+): NavigationState => {
   state.currentRoute = action.payload;
   return state;
 };
 
 const reducers = {
-  override,
+  initialize,
   updateCurrentRoute
 };
 

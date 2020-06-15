@@ -19,12 +19,13 @@ module.exports = {
         }
       ]
     });
+    config.devtool = 'eval-cheap-module-source-map';
     config.resolve.extensions.push('.ts', '.tsx');
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@client': path.resolve('../src/client'),
-      '@server': path.resolve('../src/server'),
-      '@common': path.resolve('../src/common')
+      '@client': path.resolve('src/client'),
+      '@server': path.resolve('src/server'),
+      '@common': path.resolve('src/common')
     };
     return config;
   }
