@@ -8,7 +8,7 @@ const stories = storiesOf('Navigation|Navbar', module);
 stories.addDecorator((story) => {
   return <RProvider store={store}>{story()}</RProvider>;
 });
-stories.add('test', () => (
+stories.add('Home', () => (
   <StoryContainer>
     <div>TODO: add navbar storybook</div>
   </StoryContainer>
