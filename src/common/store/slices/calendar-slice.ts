@@ -3,7 +3,7 @@ import { CalendarState } from '@common/types/calendar.types';
 
 interface UpdateCalendar {
   property: 'years' | 'months' | 'days';
-  value: string[];
+  value: number[];
   index: number;
 }
 

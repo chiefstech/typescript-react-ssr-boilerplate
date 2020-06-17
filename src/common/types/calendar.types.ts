@@ -2,10 +2,10 @@ export interface CalendarState {
   users: string[][];
   colors: string[][];
   // how to represent calendar days/weeks/months
-  days: string[][];
-  weeks: string[][];
-  months: string[][];
-  years: string[][];
+  days: number[][];
+  weeks: number[][];
+  months: number[][];
+  years: number[][];
   currentViewType: ViewType[];
 }
 
