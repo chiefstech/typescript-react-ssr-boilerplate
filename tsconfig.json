@@ -7,7 +7,7 @@
     // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
     "module": "esnext",
-    "jsx": "preserve",
+    "jsx": "react",
     "checkJs": false,
     "allowJs": true,
     "esModuleInterop": true,

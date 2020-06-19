@@ -1,29 +1,17 @@
 const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const webpackConfig = require('./config/webpack.config');
 
-const config = {
+var config = {
   mode: 'development',
   plugins: [new webpack.HotModuleReplacementPlugin()],
-  devtool: 'cheap-module-source-map',
+  devtool: 'eval-cheap-module-source-map',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: ['ts-loader'],
+        use: 'ts-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.jsx?$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
-            }
-          }
-        ]
       }
     ]
   },
@@ -38,15 +26,7 @@ const config = {
   }
 };
 
-const clientConfig = {
-  ...config,
-  ...{
-    module: webpackConfig.module,
-    devtool: webpackConfig.devtool
-  }
-};
-
-const client = Object.assign({}, clientConfig, {
+var client = Object.assign({}, config, {
   name: 'client',
   target: 'web',
   entry: path.resolve(__dirname, 'src/client/index.tsx'),
@@ -56,7 +36,7 @@ const client = Object.assign({}, clientConfig, {
   }
 });
 
-const server = Object.assign({}, config, {
+var server = Object.assign({}, config, {
   name: 'server',
   target: 'node',
   externals: [nodeExternals()],
