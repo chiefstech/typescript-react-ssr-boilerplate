@@ -3,17 +3,22 @@
   "version": "0.5.0",
   "license": "MIT",
   "author": "thomasrogerlux@outlook.fr",
+  "babel": {
+    "presets": [
+      "./config/babel-preset"
+    ]
+  },
   "scripts": {
-    "build-dev": "webpack --watch",
-    "build": "webpack",
-    "start-dev": "nodemon build/server.js",
-    "start": "node build/server.js",
+    "build": "NODE_ENV=production node scripts/build.js",
+    "start-dev": "NODE_ENV=development node scripts/start-dev.js",
+    "xstart-dev": "NODE_ENV=development nodemon build/server.js",
+    "start": "NODE_ENV=production node build/server.js",
     "precommit": "npx tsc --noEmit && lint-staged",
-    "test": "rm .babelrc & NODE_ENV=test yarn jest --config=config/jest/jest.config.js",
-    "test:watch": "rm .babelrc & NODE_ENV=test yarn jest --config=config/jest/jest.config.js --watch --json --outputFile=.jest-test-results.json || true",
-    "test:debug": "rm .babelrc & yarn -n=--inspect jest --runInBand --config=config/jest/jest.config.js --watch",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "NODE_ENV=development rm .babelrc & NODE_ENV=test yarn jest --config=config/jest/jest.config.js",
+    "test:watch": "NODE_ENV=development rm .babelrc & NODE_ENV=test yarn jest --config=config/jest/jest.config.js --watch --json --outputFile=.jest-test-results.json || true",
+    "test:debug": "NODE_ENV=development rm .babelrc & yarn -n=--inspect jest --runInBand --config=config/jest/jest.config.js --watch",
+    "storybook": "NODE_ENV=development start-storybook -p 6006",
+    "build-storybook": "NODE_ENV=production build-storybook"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -32,8 +37,12 @@
     "@common": "src/common"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
     "@material-ui/core": "^3.1.1",
     "@reduxjs/toolkit": "^1.3.6",
+    "babel-loader": "^8.1.0",
     "express": "^4.16.3",
     "module-alias": "^2.1.0",
     "react": "^16.12.0",
@@ -62,7 +71,6 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.0",
     "@types/ua-parser-js": "^0.7.33",
-    "babel-loader": "^8.1.0",
     "cypress": "^4.8.0",
     "husky": "^0.14.3",
     "jest": "^26.0.1",

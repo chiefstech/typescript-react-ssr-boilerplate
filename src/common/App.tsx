@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from 'common/pages/Home';
 import Test from 'common/pages/Test';
-import AppBar from '@common/containers/AppBar/AppBar.component';
+import AppBar from 'common/containers/AppBar/AppBar.component';
 
 export default class App extends React.Component {
   public render() {

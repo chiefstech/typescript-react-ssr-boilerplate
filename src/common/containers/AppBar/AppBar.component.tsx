@@ -33,7 +33,7 @@ class AppBar extends React.Component<AppBarProps> {
               </Grid>
               <Grid item container xs className={classes.titleContainer}>
                 <Typography variant='title' className={classes.title}>
-                  Hello Wsorld!
+                  Hello Wssaorld!
                 </Typography>
               </Grid>
               <Grid item container xs className={classes.loginButtonContainer}>
