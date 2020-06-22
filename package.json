@@ -9,9 +9,9 @@
     ]
   },
   "scripts": {
+    "build-dev": "NODE_ENV=development node scripts/build.js",
     "build": "NODE_ENV=production node scripts/build.js",
-    "start-dev": "NODE_ENV=development node scripts/start-dev.js",
-    "xstart-dev": "NODE_ENV=development nodemon build/server.js",
+    "start-dev": "NODE_ENV=development nodemon build/server.js",
     "start": "NODE_ENV=production node build/server.js",
     "precommit": "npx tsc --noEmit && lint-staged",
     "test": "NODE_ENV=development rm .babelrc & NODE_ENV=test yarn jest --config=config/jest/jest.config.js",
