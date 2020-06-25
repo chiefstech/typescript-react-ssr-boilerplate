@@ -8,7 +8,7 @@ module.exports = {
   addons: ['@storybook/addon-actions', '@storybook/addon-links'],
   webpackFinal: async (config) => {
     config.module.rules.push({
-      test: /\.tsx?$/,
+      test: /\.(j|t)sx?$/,
       use: [
         {
           loader: 'babel-loader'
