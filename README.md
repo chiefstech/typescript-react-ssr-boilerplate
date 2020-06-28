@@ -4,6 +4,7 @@
 
 - TypeScript, as the main language used
 - Webpack, to bundle our source files
+- Storybook, for component development
 - React, to build our UI
 - Redux, to manage the state of the app
 - Express, as a simple server to render initial page
